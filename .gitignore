@@ -1,0 +1,21 @@
+# secrets - NEVER commit
+.env
+.env.*
+
+# Python noise
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# local scratch
+.scratch/
+
+# Claude Code local config
+.claude/
