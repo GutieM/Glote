@@ -1,7 +1,7 @@
 # secrets - NEVER commit
 .env
 .env.*
-!.env.*
+!.env.example
 
 # Python noise
 __pycache__/
