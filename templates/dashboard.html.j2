@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Glote — Team Weather</title>
+</head>
+<body>
+<h1>Glote — Current Weather by City</h1>
+<table>
+    <thead>
+    <tr>
+        <th>City</th><th>Country</th><th>Observed (UTC)</th>
+        <th>Temp °C</th><th>Humidity %</th><th>Wind km/h</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for city in cities %}
+    <tr>
+        <td>{{ city.name }}</td>
+        <td>{{ city.country }}</td>
+        <td>{{ city.observed_at }}</td>
+        <td>{{ city.temperature_c }}</td>
+        <td>{{ city.humidity_pct }}</td>
+        <td>{{ city.wind_speed_kmh }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
