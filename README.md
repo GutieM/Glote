@@ -27,9 +27,9 @@ locations; adding a city is one config commit.
 - [x] Repo init + .gitignore
 - [x] Supabase + `.env.example` contract
 - [x] Python deps + connection smoke test
-- [ ] SQL migrations for `cities` + `weather_observations`
-- [ ] Open-Meteo loader with idempotency
-- [ ] pytest harness
+- [x] SQL migrations for `cities` + `weather_observations`
+- [x] Open-Meteo loader with idempotency
+- [x] pytest harness
 - [ ] GitHub Actions PR gate + scheduled refresh
 - [ ] Static HTML dashboard + GitHub Pages deploy
 
