@@ -30,8 +30,19 @@ locations; adding a city is one config commit.
 - [x] SQL migrations for `cities` + `weather_observations`
 - [x] Open-Meteo loader with idempotency
 - [x] pytest harness
-- [ ] GitHub Actions PR gate + scheduled refresh
-- [ ] Static HTML dashboard + GitHub Pages deploy
+- [x] GitHub Actions PR gate + scheduled refresh
+- [x] Static HTML dashboard + GitHub Pages deploy
+
+## A note on freshness
+The dashboard is a **static snapshot**, not a live query — it's only as current as the
+last successful refresh. A scheduled GitHub Actions workflow re-runs the pipeline daily
+(and on demand) to fetch new observations and republish the page.
+
+The hosted database (Supabase free tier) can pause after inactivity, which freezes the
+snapshot until the next run. That's a hosting-cost choice, not an architectural limit: the
+pipeline is **database-agnostic** — point `DATABASE_URL` at any Postgres and the loader,
+tests, and renderer run unchanged. The tests (hermetic CI container) and the dashboard
+(static HTML) never depend on that hosted DB at all.
 
 ## v1.1 backlog
 - Earthquake fetcher + nearby-city haversine SQL (the original "current affairs" angle)
